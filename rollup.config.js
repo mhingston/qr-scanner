@@ -5,15 +5,16 @@ export default [{
     // library
     input: 'src/qr-scanner.js',
     output: {
-        file: 'qr-scanner.min.js',
-        format: 'esm',
+        name: 'QrScanner',
+        file: 'dist/qr-scanner.min.js',
+        format: 'iife',
         interop: false,
         sourcemap: true,
     },
     plugins: [
         closureCompiler({
             language_in: 'ECMASCRIPT6',
-            language_out: 'ECMASCRIPT6',
+            language_out: 'ECMASCRIPT5',
             rewrite_polyfills: false,
         })
     ]
@@ -21,7 +22,7 @@ export default [{
     // worker
     input: 'src/worker.js',
     output: {
-        file: 'qr-scanner-worker.min.js',
+        file: 'dist/qr-scanner-worker.min.js',
         format: 'iife',
         interop: false,
         sourcemap: true,
@@ -32,7 +33,7 @@ export default [{
             //compilation_level: 'ADVANCED',
             //warning_level: 'QUIET',
             language_in: 'ECMASCRIPT6',
-            language_out: 'ECMASCRIPT6',
+            language_out: 'ECMASCRIPT5',
             rewrite_polyfills: false,
         }),
     ]
